@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:vxcore:resources" 
+					 xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+					 xmlns="urn:vxcore:resources" 
+           xmlns:vxns="urn:vxcore:resources" 
+					 elementFormDefault="qualified" 
+					 attributeFormDefault="unqualified">
+	
+	<xs:complexType name="resourceKeyBase">
+		<xs:annotation>
+			<xs:documentation>base type for all resource items</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="key" type="xs:ID" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="resourceKey">
+		<xs:annotation>
+			<xs:documentation>describes a key in the resource file</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="resourceKeyBase">
+				<xs:group ref="resourceItem" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="resources">
+		<xs:annotation>
+			<xs:documentation>document root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="resource" type="resourceKey" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+  <xs:complexType name="dictionaryType">
+    <xs:annotation>
+      <xs:documentation>represents set of objects</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="100">
+        <xs:complexType mixed="true">
+          <xs:attribute name="key" type="xs:string" use="required" />
+          <xs:attribute name="value" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="arrayType">
+    <xs:annotation>
+      <xs:documentation>represents array of objects</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="primitiveResourceItem" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+	<xs:complexType name="switchType">
+		<xs:annotation>
+			<xs:documentation>switch operator</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="case" maxOccurs="100">
+				<xs:complexType>
+          <xs:annotation>
+              <xs:documentation>simple case, values can be specified as an attribute</xs:documentation>
+          </xs:annotation>
+					<xs:group ref="resourceItem" />
+					<xs:attribute name="value" type="xs:string" use="required" />
+				</xs:complexType>
+			</xs:element>
+			
+			<xs:element name="xcase" minOccurs="0" maxOccurs="100">
+				<xs:complexType>
+          <xs:annotation>
+              <xs:documentation>simple case, values can be specified as a list of 'value' elements</xs:documentation>
+          </xs:annotation>
+					<xs:sequence>
+						<xs:element name="values" minOccurs="1" maxOccurs="1">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="value" minOccurs="1" maxOccurs="100" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:group ref="resourceItem" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<xs:element name="default" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>same as 'default' in C#</xs:documentation>
+                    </xs:annotation>
+					<xs:group ref="resourceItem" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="parameter" type="xs:string" use="required" />
+	</xs:complexType>
+
+  <xs:group name="primitiveResourceItem">
+    <xs:annotation>
+      <xs:documentation>all possible elements list</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="string" type="xs:string" />
+      <xs:element name="int32" type="xs:int" />
+      <xs:element name="bool" type="xs:boolean" />
+      <xs:element name="array" type="arrayType" />
+    </xs:choice>
+  </xs:group>
+  
+  <xs:group name="resourceItem">
+		<xs:annotation>
+			<xs:documentation>all possible elements list</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="switch" type="switchType" />
+			<xs:element name="string" type="xs:string" />
+      <xs:element name="int32" type="xs:int" />
+      <xs:element name="bool" type="xs:boolean" />
+      <xs:element name="array" type="arrayType" />
+      <xs:element name="dictionary" type="dictionaryType">
+        <xs:unique name="uniqueEntryKey">
+          <xs:selector xpath="vxns:entry" />
+          <xs:field xpath="@key" />
+        </xs:unique>
+      </xs:element>
+    </xs:choice>
+	</xs:group>
+</xs:schema>

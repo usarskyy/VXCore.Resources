@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<resource key="view-name">
+		<switch parameter="controller">
+			<case value="merchants">
+				<switch parameter="action">
+					<case value="default">
+						<string>FillCompanyProfile</string>
+					</case>
+				</switch>
+			</case>
+			<case value="applications">
+				<switch parameter="action">
+					<case value="add">
+						<string>NewApplicationCreation</string>
+					</case>
+				</switch>
+			</case>
+			<case value="dashboard">
+				<switch parameter="action">
+					<case value="index">
+						<switch parameter="merchants-count">
+							<case value="0">
+								<string>FirstSteps</string>
+							</case>
+							<default>
+								<string></string>
+							</default>
+						</switch>
+					</case>
+				</switch>
+			</case>
+		</switch>
+	</resource>
+</resources>

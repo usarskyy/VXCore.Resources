@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <resource key="arrayList">
+    <array>
+      <string>Test1</string>
+      <string>Test2 34567</string>
+      <string>Test3 %$^#$</string>
+    </array>
+  </resource>
+</resources>

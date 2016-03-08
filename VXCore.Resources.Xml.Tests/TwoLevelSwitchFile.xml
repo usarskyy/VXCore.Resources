@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <resource key="someText">
+        <switch parameter="someParamName">
+            <case value="test">
+                <switch parameter="someParamName2">
+                    <case value="qwerty|qwerty1">
+                        <string>edrtfyughjk4567</string>
+                    </case>
+                    <default>
+                        <string>ertyDFGH45</string>
+                    </default>
+                </switch>
+            </case>
+            <default>
+                <string>dfghj</string>
+            </default>
+        </switch>
+    </resource>
+</resources>

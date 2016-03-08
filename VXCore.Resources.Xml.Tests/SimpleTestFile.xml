@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<resource key="someText">
+		<string>ertfyuhiokl23456789$#%^</string>
+	</resource>
+	<resource key="someText2">
+		<string>89645</string>
+	</resource>
+</resources>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<resource key="someText">
+		<switch parameter="someParamName">
+			<case value="test">
+				<string>ytgvfsdf</string>
+			</case>
+			<case value="test1|test2|test3">
+				<string>dtfryguhERTYU</string>
+			</case>
+			<default>
+				<string>FH*567u</string>
+			</default>
+		</switch>
+	</resource>
+</resources>

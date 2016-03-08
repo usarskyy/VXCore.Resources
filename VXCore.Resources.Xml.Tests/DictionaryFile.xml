@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <resource key="dictionaryResource">
+    <dictionary>
+      <entry key="1" value="test" />
+      <entry key="2" />
+      <entry key="3"><![CDATA[test2]]></entry>
+    </dictionary>
+  </resource>
+
+  <resource key="emptyDictionary">
+    <dictionary>
+    </dictionary>
+  </resource>
+</resources>

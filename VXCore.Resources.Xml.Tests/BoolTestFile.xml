@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <resource key="boolResource">
+    <bool>true</bool>
+  </resource>
+
+  <resource key="SKIP_ACTIVITY_DEF">
+    <switch parameter="ACTIVITY_STATUS">
+      <case value="PENDING">
+        <switch parameter="ACTIVITY_DEF_ID">
+          <case value="18|22|24|45|46|54|55|60|61|67|71|72|73|74|77|81|83|87|89|97|100|106|107|109|110|112|113|123|125|138|139|141">
+            <!-- LIST_OF_ACTIVITIES_TO_MONITOR -->
+            <bool>false</bool>
+          </case>
+          <default>
+            <!-- All "ACTIVITY_STATUS==PENDING" that are not in "LIST_OF_ACTIVITIES_TO_MONITOR" are skipped -->
+            <bool>true</bool>
+          </default>
+        </switch>
+      </case>
+      <default>
+        <switch parameter="ACTIVITY_DEF_ID">
+          <case value="1|3|4|6|7|9|10|11|12|15|16|17|18|22|24|30|31|35|36|39|41|44|45|46|54|55|59|60|61|67|69|71|72|73|74|77|78|81|82|83|86|87|89|90|96|97|99|100|102|103|104|105|106|107|109|110|111|112|113|123|124|125|138|139|141|144|145|146|148|161|162|165|166">
+            <!-- LIST_OF_ACTIVITIES_TO_MONITOR -->
+            <bool>false</bool>
+          </case>
+          <default>
+            <!-- All "ACTIVITY_STATUS==ERROR" that are not in "LIST_OF_ACTIVITIES_TO_MONITOR" are skipped -->
+            <bool>true</bool>
+          </default>
+        </switch>
+      </default>
+    </switch>
+  </resource>
+</resources>

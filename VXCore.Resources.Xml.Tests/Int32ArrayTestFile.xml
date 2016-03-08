@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns="urn:vxcore:resources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <resource key="arrayList">
+    <array>
+      <int32>45</int32>
+      <int32>89561</int32>
+      <int32>56511165</int32>
+      <int32>-56511165</int32>
+      <int32>45</int32>
+    </array>
+  </resource>
+</resources>
