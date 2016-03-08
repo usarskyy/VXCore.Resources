@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>VXCore.Resources.Xml</id>
+    <version>1.0.0</version>
+    <authors>Volodymyr Usarskyy</authors>
+    <owners>Volodymyr Usarskyy</owners>
+    <licenseUrl>http://www.apache.org/licenses/</licenseUrl>
+    <projectUrl>https://github.com/usarskyy/VXCore.Resources</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Configurable XML config files</description>
+    <releaseNotes>Initial version</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>ruleengines config</tags>
+	
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+	<file src="VXCore.Resources.Xml\bin\VXCore.Resources.Xml.dll" target="lib\net35" />
+	<file src="VXCore.Resources.Xml\bin\VXCore.Resources.Xml.pdb" target="lib\net35" />
+	<file src="VXCore.Resources\bin\VXCore.Resources.dll" target="lib\net35" />
+	<file src="VXCore.Resources\bin\VXCore.Resources.pdb" target="lib\net35" />
+  </files>
+</package>
