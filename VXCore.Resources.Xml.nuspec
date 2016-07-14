@@ -21,5 +21,6 @@
 	<file src="VXCore.Resources.Xml\bin\VXCore.Resources.Xml.pdb" target="lib\net35" />
 	<file src="VXCore.Resources\bin\VXCore.Resources.dll" target="lib\net35" />
 	<file src="VXCore.Resources\bin\VXCore.Resources.pdb" target="lib\net35" />
+	<file src="VXCore.Resources.Xml\ValidationSchema.xsd " target="lib\net35" />
   </files>
 </package>
